@@ -9,7 +9,13 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>Shopping</title>
     <style>
-
+        .cut-text-multi {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            max-height: 3rem;
+        }
     </style>
 </head>
 
@@ -38,198 +44,93 @@
             <div class="my-4">
                 <h5 id="scrollspyDog">หมวดหมู่สุนัข</h5>
                 <div class="row row-cols-1 row-cols-md-4 g-3 mx-3">
-                    <div class="col">
-                        <div class="card h-100">
-                            <img src="./img/Shop/Pedigree.jpg" class="card-img-top mx-auto" alt="..." style="width: 70%;">
-                            <div class="card-body">
-                                <h5 class="card-title">Pedigree รสเนื้อวัวและนม</h5>
-                                <p class="card-text fs-6 opacity-75">สูตรออล อิน วัน
-                                    มีคุณค่าสารอาหารที่จำเป็นและครบถ้วนต่อการเจริญเติบโตของลูกสุนัข
-                                    เสริมสร้างการเจริญเติบโตที่สมบูรณ์แข็งแรง</p>
-                                <div class="card-text text-end">฿200.00</div>
+                    <?php
+                    include('conn.php');
+                    $query = mysqli_query($conn, "select * from product where PetType_id ='0001'");
+                    while ($row = mysqli_fetch_array($query)) {
+                    ?>
+                        <div class="col" style="height:auto;">
+                            <div class="card h-100">
+                                <img src="<?php echo $row['Product_img']; ?>" class="card-img-top mx-auto" alt="..." style="width: 70%;">
+                                <div class="card-body">
+                                    <h5 class="card-title" style="overflow:hidden;text-overflow: ellipsis;height:3rem"><?php echo $row['Product_name']; ?></h5>
+                                    <div class="card-text fs-6 opacity-75 cut-text-multi"><?php echo $row['Product_detail']; ?></div>
+                                    <div class="card-text text-end">฿<?php echo $row['Product_price']; ?></div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col">
-                        <div class="card h-100">
-                            <img src="./img/Shop/Pedigree.jpg" class="card-img-top mx-auto" alt="..." style="width: 70%;">
-                            <div class="card-body">
-                                <h5 class="card-title">Pedigree รสเนื้อวัวและนม</h5>
-                                <p class="card-text fs-6 opacity-75">สูตรออล อิน วัน
-                                    มีคุณค่าสารอาหารที่จำเป็นและครบถ้วนต่อการเจริญเติบโตของลูกสุนัข
-                                    เสริมสร้างการเจริญเติบโตที่สมบูรณ์แข็งแรง</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card h-100">
-                            <img src="./img/Shop/Pedigree.jpg" class="card-img-top mx-auto" alt="..." style="width: 70%;">
-                            <div class="card-body">
-                                <h5 class="card-title">Pedigree รสเนื้อวัวและนม</h5>
-                                <p class="card-text fs-6 opacity-75">สูตรออล อิน วัน
-                                    มีคุณค่าสารอาหารที่จำเป็นและครบถ้วนต่อการเจริญเติบโตของลูกสุนัข
-                                    เสริมสร้างการเจริญเติบโตที่สมบูรณ์แข็งแรง</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card h-100">
-                            <img src="./img/Shop/Pedigree.jpg" class="card-img-top mx-auto" alt="..." style="width: 70%;">
-                            <div class="card-body">
-                                <h5 class="card-title">Pedigree รสเนื้อวัวและนม</h5>
-                                <p class="card-text fs-6 opacity-75">สูตรออล อิน วัน
-                                    มีคุณค่าสารอาหารที่จำเป็นและครบถ้วนต่อการเจริญเติบโตของลูกสุนัข
-                                    เสริมสร้างการเจริญเติบโตที่สมบูรณ์แข็งแรง</p>
-                            </div>
-                        </div>
-                    </div>
+                    <?php
+                    }
+                    ?>
                 </div>
             </div>
             <div class="my-4">
                 <h5 id="scrollspyCat">หมวดหมู่แมว</h5>
                 <div class="row row-cols-1 row-cols-md-4 g-3 mx-3">
-                    <div class="col">
-                        <div class="card h-100">
-                            <img src="./img/Shop/CatFood.jpg" class="card-img-top mx-auto" alt="..." style="width: 70%;">
-                            <div class="card-body">
-                                <h5 class="card-title">Purina สูตรปลาแซลมอน</h5>
-                                <p class="card-text fs-6 opacity-75">สนับสนุนการทำงานของระบบภูมิคุ้มกัน
-                                    พร้อมช่วยเรื่องขน และผิวหนัง ช่วยในการดูดซึมสารอาหารได้ดี
-                                    จากวัตถุดิบคุณภาพสูง</p>
+                <?php
+                    include('conn.php');
+                    $query = mysqli_query($conn, "select * from product where PetType_id ='0002'");
+                    while ($row = mysqli_fetch_array($query)) {
+                    ?>
+                        <div class="col" style="height:auto;">
+                            <div class="card h-100">
+                                <img src="<?php echo $row['Product_img']; ?>" class="card-img-top mx-auto" alt="..." style="width: 70%;">
+                                <div class="card-body">
+                                    <h5 class="card-title" style="overflow:hidden;text-overflow: ellipsis;height:3rem"><?php echo $row['Product_name']; ?></h5>
+                                    <div class="card-text fs-6 opacity-75 cut-text-multi"><?php echo $row['Product_detail']; ?></div>
+                                    <div class="card-text text-end">฿<?php echo $row['Product_price']; ?></div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col">
-                        <div class="card h-100">
-                            <img src="./img/Shop/CatFood.jpg" class="card-img-top mx-auto" alt="..." style="width: 70%;">
-                            <div class="card-body">
-                                <h5 class="card-title">Purina สูตรปลาแซลมอน</h5>
-                                <p class="card-text fs-6 opacity-75">สนับสนุนการทำงานของระบบภูมิคุ้มกัน
-                                    พร้อมช่วยเรื่องขน และผิวหนัง ช่วยในการดูดซึมสารอาหารได้ดี
-                                    จากวัตถุดิบคุณภาพสูง</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card h-100">
-                            <img src="./img/Shop/CatFood.jpg" class="card-img-top mx-auto" alt="..." style="width: 70%;">
-                            <div class="card-body">
-                                <h5 class="card-title">Purina สูตรปลาแซลมอน</h5>
-                                <p class="card-text fs-6 opacity-75">สนับสนุนการทำงานของระบบภูมิคุ้มกัน
-                                    พร้อมช่วยเรื่องขน และผิวหนัง ช่วยในการดูดซึมสารอาหารได้ดี
-                                    จากวัตถุดิบคุณภาพสูง</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card h-100">
-                            <img src="./img/Shop/CatFood.jpg" class="card-img-top mx-auto" alt="..." style="width: 70%;">
-                            <div class="card-body">
-                                <h5 class="card-title">Purina สูตรปลาแซลมอน</h5>
-                                <p class="card-text fs-6 opacity-75">สนับสนุนการทำงานของระบบภูมิคุ้มกัน
-                                    พร้อมช่วยเรื่องขน และผิวหนัง ช่วยในการดูดซึมสารอาหารได้ดี
-                                    จากวัตถุดิบคุณภาพสูง</p>
-                            </div>
-                        </div>
-                    </div>
+                    <?php
+                    }
+                    ?>
                 </div>
             </div>
             <div class="my-4">
                 <h5 id="scrollspyFish">หมวดหมู่ปลา</h5>
                 <div class="row row-cols-1 row-cols-md-4 g-3 mx-3">
-                    <div class="col">
-                        <div class="card h-100">
-                            <img src="./img/Shop/FishFood.jpg" class="card-img-top mx-auto" alt="..." style="width: 70%;">
-                            <div class="card-body">
-                                <h5 class="card-title">Purina สูตรปลาแซลมอน</h5>
-                                <p class="card-text fs-6 opacity-75">สนับสนุนการทำงานของระบบภูมิคุ้มกัน
-                                    พร้อมช่วยเรื่องขน และผิวหนัง ช่วยในการดูดซึมสารอาหารได้ดี
-                                    จากวัตถุดิบคุณภาพสูง</p>
+                <?php
+                    include('conn.php');
+                    $query = mysqli_query($conn, "select * from product where PetType_id ='0003'");
+                    while ($row = mysqli_fetch_array($query)) {
+                    ?>
+                        <div class="col" style="height:auto;">
+                            <div class="card h-100">
+                                <img src="<?php echo $row['Product_img']; ?>" class="card-img-top mx-auto" alt="..." style="width: 70%;">
+                                <div class="card-body">
+                                    <h5 class="card-title" style="overflow:hidden;text-overflow: ellipsis;height:3rem"><?php echo $row['Product_name']; ?></h5>
+                                    <div class="card-text fs-6 opacity-75 cut-text-multi"><?php echo $row['Product_detail']; ?></div>
+                                    <div class="card-text text-end">฿<?php echo $row['Product_price']; ?></div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col">
-                        <div class="card h-100">
-                            <img src="./img/Shop/FishFood.jpg" class="card-img-top mx-auto" alt="..." style="width: 70%;">
-                            <div class="card-body">
-                                <h5 class="card-title">Purina สูตรปลาแซลมอน</h5>
-                                <p class="card-text fs-6 opacity-75">สนับสนุนการทำงานของระบบภูมิคุ้มกัน
-                                    พร้อมช่วยเรื่องขน และผิวหนัง ช่วยในการดูดซึมสารอาหารได้ดี
-                                    จากวัตถุดิบคุณภาพสูง</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card h-100">
-                            <img src="./img/Shop/FishFood.jpg" class="card-img-top mx-auto" alt="..." style="width: 70%;">
-                            <div class="card-body">
-                                <h5 class="card-title">Purina สูตรปลาแซลมอน</h5>
-                                <p class="card-text fs-6 opacity-75">สนับสนุนการทำงานของระบบภูมิคุ้มกัน
-                                    พร้อมช่วยเรื่องขน และผิวหนัง ช่วยในการดูดซึมสารอาหารได้ดี
-                                    จากวัตถุดิบคุณภาพสูง</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card h-100">
-                            <img src="./img/Shop/FishFood.jpg" class="card-img-top mx-auto" alt="..." style="width: 70%;">
-                            <div class="card-body">
-                                <h5 class="card-title">Purina สูตรปลาแซลมอน</h5>
-                                <p class="card-text fs-6 opacity-75">สนับสนุนการทำงานของระบบภูมิคุ้มกัน
-                                    พร้อมช่วยเรื่องขน และผิวหนัง ช่วยในการดูดซึมสารอาหารได้ดี
-                                    จากวัตถุดิบคุณภาพสูง</p>
-                            </div>
-                        </div>
-                    </div>
+                    <?php
+                    }
+                    ?>
                 </div>
             </div>
             <div class="my-4">
                 <h5 id="scrollspyBird">หมวดหมู่นก</h5>
                 <div class="row row-cols-1 row-cols-md-4 g-3 mx-3">
-                    <div class="col">
-                        <div class="card h-100">
-                            <img src="./img/Shop/BirdFood.jpg" class="card-img-top mx-auto" alt="..." style="width: 70%;">
-                            <div class="card-body">
-                                <h5 class="card-title">Purina สูตรปลาแซลมอน</h5>
-                                <p class="card-text fs-6 opacity-75">สนับสนุนการทำงานของระบบภูมิคุ้มกัน
-                                    พร้อมช่วยเรื่องขน และผิวหนัง ช่วยในการดูดซึมสารอาหารได้ดี
-                                    จากวัตถุดิบคุณภาพสูง</p>
+                <?php
+                    include('conn.php');
+                    $query = mysqli_query($conn, "select * from product where PetType_id ='0004'");
+                    while ($row = mysqli_fetch_array($query)) {
+                    ?>
+                        <div class="col" style="height:auto;">
+                            <div class="card h-100">
+                                <img src="<?php echo $row['Product_img']; ?>" class="card-img-top mx-auto" alt="..." style="width: 70%;">
+                                <div class="card-body">
+                                    <h5 class="card-title" style="overflow:hidden;text-overflow: ellipsis;height:3rem"><?php echo $row['Product_name']; ?></h5>
+                                    <div class="card-text fs-6 opacity-75 cut-text-multi"><?php echo $row['Product_detail']; ?></div>
+                                    <div class="card-text text-end">฿<?php echo $row['Product_price']; ?></div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col">
-                        <div class="card h-100">
-                            <img src="./img/Shop/BirdFood.jpg" class="card-img-top mx-auto" alt="..." style="width: 70%;">
-                            <div class="card-body">
-                                <h5 class="card-title">Purina สูตรปลาแซลมอน</h5>
-                                <p class="card-text fs-6 opacity-75">สนับสนุนการทำงานของระบบภูมิคุ้มกัน
-                                    พร้อมช่วยเรื่องขน และผิวหนัง ช่วยในการดูดซึมสารอาหารได้ดี
-                                    จากวัตถุดิบคุณภาพสูง</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card h-100">
-                            <img src="./img/Shop/BirdFood.jpg" class="card-img-top mx-auto" alt="..." style="width: 70%;">
-                            <div class="card-body">
-                                <h5 class="card-title">Purina สูตรปลาแซลมอน</h5>
-                                <p class="card-text fs-6 opacity-75">สนับสนุนการทำงานของระบบภูมิคุ้มกัน
-                                    พร้อมช่วยเรื่องขน และผิวหนัง ช่วยในการดูดซึมสารอาหารได้ดี
-                                    จากวัตถุดิบคุณภาพสูง</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card h-100">
-                            <img src="./img/Shop/BirdFood.jpg" class="card-img-top mx-auto" alt="..." style="width: 70%;">
-                            <div class="card-body">
-                                <h5 class="card-title">Purina สูตรปลาแซลมอน</h5>
-                                <p class="card-text fs-6 opacity-75">สนับสนุนการทำงานของระบบภูมิคุ้มกัน
-                                    พร้อมช่วยเรื่องขน และผิวหนัง ช่วยในการดูดซึมสารอาหารได้ดี
-                                    จากวัตถุดิบคุณภาพสูง</p>
-                            </div>
-                        </div>
-                    </div>
+                    <?php
+                    }
+                    ?>
                 </div>
             </div>
         </div>
