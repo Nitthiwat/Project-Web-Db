@@ -46,7 +46,7 @@
                 <div class="row row-cols-1 row-cols-md-4 g-3 mx-3">
                     <?php
                     include('conn.php');
-                    $query = mysqli_query($conn, "select * from product where PetType_id ='0001'");
+                    $query = mysqli_query($conn, "select * from product where PetType_id ='PT001'");
                     while ($row = mysqli_fetch_array($query)) {
                     ?>
                         <div class="col" style="height:auto;">
@@ -69,7 +69,7 @@
                 <div class="row row-cols-1 row-cols-md-4 g-3 mx-3">
                 <?php
                     include('conn.php');
-                    $query = mysqli_query($conn, "select * from product where PetType_id ='0002'");
+                    $query = mysqli_query($conn, "select * from product where PetType_id ='PT002'");
                     while ($row = mysqli_fetch_array($query)) {
                     ?>
                         <div class="col" style="height:auto;">
@@ -92,7 +92,7 @@
                 <div class="row row-cols-1 row-cols-md-4 g-3 mx-3">
                 <?php
                     include('conn.php');
-                    $query = mysqli_query($conn, "select * from product where PetType_id ='0003'");
+                    $query = mysqli_query($conn, "select * from product where PetType_id ='PT003'");
                     while ($row = mysqli_fetch_array($query)) {
                     ?>
                         <div class="col" style="height:auto;">
@@ -115,7 +115,7 @@
                 <div class="row row-cols-1 row-cols-md-4 g-3 mx-3">
                 <?php
                     include('conn.php');
-                    $query = mysqli_query($conn, "select * from product where PetType_id ='0004'");
+                    $query = mysqli_query($conn, "select * from product where PetType_id ='PT004'");
                     while ($row = mysqli_fetch_array($query)) {
                     ?>
                         <div class="col" style="height:auto;">
