@@ -21,6 +21,7 @@
 </head>
 
 <body>
+    <?php include('navbar.php'); ?>
     <img src="./img/HeadShop.jpg" class="img-fluid w-100" alt="..." style="height: 60vh;">
 
     <div class="container">
@@ -69,7 +70,7 @@
             <div class="my-4">
                 <h5 id="scrollspyCat">หมวดหมู่แมว</h5>
                 <div class="row row-cols-1 row-cols-md-4 g-3 mx-3">
-                <?php
+                    <?php
                     include('conn.php');
                     $query = mysqli_query($conn, "select * from product where PetType_id ='PT002'");
                     while ($row = mysqli_fetch_array($query)) {
@@ -92,7 +93,7 @@
             <div class="my-4">
                 <h5 id="scrollspyFish">หมวดหมู่ปลา</h5>
                 <div class="row row-cols-1 row-cols-md-4 g-3 mx-3">
-                <?php
+                    <?php
                     include('conn.php');
                     $query = mysqli_query($conn, "select * from product where PetType_id ='PT003'");
                     while ($row = mysqli_fetch_array($query)) {
@@ -115,7 +116,7 @@
             <div class="my-4">
                 <h5 id="scrollspyBird">หมวดหมู่นก</h5>
                 <div class="row row-cols-1 row-cols-md-4 g-3 mx-3">
-                <?php
+                    <?php
                     include('conn.php');
                     $query = mysqli_query($conn, "select * from product where PetType_id ='PT004'");
                     while ($row = mysqli_fetch_array($query)) {
@@ -137,7 +138,6 @@
             </div>
         </div>
     </div>
-    <?php include('footer.php') ?>
     <script src="js/bootstrap.min.js"></script>
 </body>
 

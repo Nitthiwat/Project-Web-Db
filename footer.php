@@ -61,7 +61,7 @@
 
         }
 
-        h4 {
+        .contact h4 {
             padding-bottom: 5%;
         }
 
