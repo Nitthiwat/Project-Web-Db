@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="/js/loadmore.js"></script>
     <title>Shopping</title>
     <style>
         .cut-text-multi {
@@ -43,7 +44,7 @@
         <div data-bs-spy="scroll" data-bs-target="#navbar-shop" data-bs-offset="0" class="scrollspy-example px-5" tabindex="0">
             <div class="my-4">
                 <h5 id="scrollspyDog">หมวดหมู่สุนัข</h5>
-                <div class="row row-cols-1 row-cols-md-4 g-3 mx-3">
+                <div class="item-more row row-cols-1 row-cols-md-4 g-3 mx-3">
                     <?php
                     include('conn.php');
                     $query = mysqli_query($conn, "select * from product where PetType_id ='PT001'");
@@ -63,6 +64,7 @@
                     }
                     ?>
                 </div>
+                <button type="button" class="btn btn-secondary loadmore">Secondary</button>
             </div>
             <div class="my-4">
                 <h5 id="scrollspyCat">หมวดหมู่แมว</h5>
