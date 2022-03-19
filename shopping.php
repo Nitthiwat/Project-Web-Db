@@ -21,13 +21,7 @@
 </head>
 
 <body>
-<<<<<<< HEAD
     <?php include('navbar.php'); ?>
-=======
-    <!-- test -->
-    <h1>สวัสดีปอน</h1>
-    <h1>laksdaklsdjalskjdklasjdklasjd</h1>
->>>>>>> pond
     <img src="./img/HeadShop.jpg" class="img-fluid w-100" alt="..." style="height: 60vh;">
 
     <div class="container">
