@@ -13,28 +13,38 @@
 <body>
     <?php include('navbar.php'); ?>
 
-    <section id="cta" class="cta" style="background-color: #502064;">
+    <section id="cta" class="cta">
         <div class="container" data-aos="zoom-out">
-            <div class="row g-5 mx-5 d-flex justify-content-center">
-                <div class="col-md-6 order-first order-md-first d-flex align-items-center justify-content-center">
-                    <div class="img mx-100">
-                        <img src="img/About4.jpg" alt="" class="img-fluid">
+            <?php
+            include('conn.php');
+            $id = $_GET['Product_id'];
+            $query = mysqli_query($conn, "select * from product where Product_id='" . $id . "'");
+            while ($row = mysqli_fetch_array($query)) {
+            ?>
+                <div class="row my-2 py-5 d-flex justify-content-center" style="background-color: #502064;margin:0 7rem">
+                    <div class="col-md-6 order-first order-md-first d-flex align-items-center justify-content-center">
+                        <div class="img mx-100" style="width: 400px;">
+                            <img src="<?php echo $row['Product_img']; ?>" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-md-5 px-2 content d-flex flex-column justify-content-center order-last order-md-last" style="color: white;">
+                        <h3><?php echo $row['Product_name']; ?></h3>
+                        <p class="opacity-75"><?php echo $row['Product_detail']; ?></p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5>ราคา: <?php echo $row['Product_price']; ?> บาท</h5>
+                            <div>
+                                <span class="pull-left"><a href="/shopping.php" data-toggle="modal" class="btn btn-primary">ซื้อสินค้า</a></span>
+                                <span class="pull-left"><a href="/shopping.php" data-toggle="modal" class="btn btn-primary">ตะกร้าสินค้า</a></span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-5 px-5 content d-flex flex-column justify-content-center order-last order-md-last" style="color: white;">
-                    <h2>About Me </h2>
-                    <p>เว็บไซต์ Pet Store มีบริการที่หลากหลายที่มุ่งเน้นใน
-                        เรื่องความสะอาด และอาหารของสัตว์จัดตั้งขึ้นเพื่อตอบสนองความ
-                        ต้องการของผู้ที่มีใจรักในสัตว์เลี้ยงเราให้ความดูแล เอาใจใส่
-                        สัตว์เลี้ยงทุกตัวเป็นอย่างดี พิถีพิถันในทุกขั้นตอนการทำความสะอาด
-                        ทำให้ผู้ที่นำสัตว์เลี้ยงเข้ามาใช้บริการ มีความไว้วางใจ
-                        อีกทั้งยังมีอาหารและอุปกรณ์สำหรับสัตว์เลี้ยงให้ผู้ใช้บริการ
-                        ได้เลือกสรรอย่างครบครัน</p>
-                    <span class="pull-left"><a href="/shopping.php" data-toggle="modal" class="btn btn-primary">ซื้อสินค้า</a></span>
-                </div>
-            </div>
+            <?php
+            }
+            ?>
         </div>
     </section>
+    <?php include('footer.php'); ?>
 </body>
 
 </html>

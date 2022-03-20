@@ -49,10 +49,11 @@
                     include('conn.php');
                     $query = mysqli_query($conn, "select * from product where PetType_id ='PT001'");
                     while ($row = mysqli_fetch_array($query)) {
+                        if($row['Product_Qty']>0){
                     ?>
                         <div class="col" style="height:auto;">
                             <div class="card h-100">
-                                <img src="<?php echo $row['Product_img']; ?>" class="card-img-top mx-auto" alt="..." style="width: 70%;">
+                                <a href="./buy.php?Product_id=<?php echo $row['Product_id']; ?>" class="card-img-top text-center"><img src="<?php echo $row['Product_img']; ?>" alt="..." style="width: 70%;"></a>
                                 <div class="card-body">
                                     <h5 class="card-title" style="overflow:hidden;text-overflow: ellipsis;height:3rem"><?php echo $row['Product_name']; ?></h5>
                                     <div class="card-text fs-6 opacity-75 cut-text-multi"><?php echo $row['Product_detail']; ?></div>
@@ -61,6 +62,7 @@
                             </div>
                         </div>
                     <?php
+                        }
                     }
                     ?>
                 </div>
