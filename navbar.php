@@ -50,7 +50,7 @@
   </div>
   <!-- Topbar End -->
   <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm px-5 py-3 py-lg-4">
-    <a href="index.html" class="navbar-brand p-0">
+    <a href="index.php" class="navbar-brand p-0">
       <h1 class="m-0 text-secondary"><i class="#"></i>Pet Care</h1>
     </a>
   </nav>
