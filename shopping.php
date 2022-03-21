@@ -21,6 +21,7 @@
 </head>
 
 <body>
+    <?php include('navbar.php'); ?>
     <img src="./img/HeadShop.jpg" class="img-fluid w-100" alt="..." style="height: 60vh;">
 
     <div class="container">

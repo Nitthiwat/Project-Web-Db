@@ -5,11 +5,12 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
   <link rel="stylesheet" href="colors_bt5.css">
-  <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+
   <link rel="stylesheet" href="fontawesome-free-6.0.0-web/css/fontawesome.min.css">
   <link href="fontawesome-free-6.0.0-web/css/all.css" rel="stylesheet">
 
@@ -17,7 +18,7 @@
 
 <body>
   <!-- Topbar Start -->
-  <div class="container-fluid bd-purple-600 ps-5 pe-0 d-none d-lg-block">
+  <div class="container-fluid ps-5 pe-0 d-none d-lg-block" style="background-color:#502064; color: white;">
     <div class="row gx-0">
       <div class="col-md-6 text-center text-lg-start mb-2 mb-lg-0">
         <div class="d-inline-flex align-items-center ">
@@ -32,12 +33,9 @@
 
       </div>
       <div class="col-md-6 text-center text-lg-end">
-        <div class="position-relative d-inline-flex align-items-center bd-purple-600 text-white top-shape px-5">
+        <div class="position-relative d-inline-flex align-items-center text-white top-shape px-5" style="background-color:#502064; color: white;">
 
           <ul class="nav  px-6">
-            <li class="nav-item ">
-              <a class="nav-link text-light" href="#">Admin</a>
-            </li>
             <li class="nav-item">
               <a class="nav-link text-light" href="signup.php" data-bs-toggle="modal" data-bs-target="#signupModal">Sign up</a>
             </li>
@@ -56,8 +54,17 @@
       <h1 class="m-0 text-secondary"><i class="#"></i>Pet Care</h1>
     </a>
   </nav>
-  
-  
+  <ul class="nav nav-tabs bd-gray-600 px-4">
+    <li class="nav-item ">
+      <a class="nav-link text-light" href="#">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-light" href="#">About me</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-light" href="#">Product</a>
+    </li>
+  </ul>
 
 
 </body>
